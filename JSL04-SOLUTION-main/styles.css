@@ -275,6 +275,23 @@ dialog {
   outline: none;
 }
 
+.add-task-btn {
+  background-color: #635FC7; /* Button background */
+  color: #ffffff;            /* White text */
+  border: none;
+  border-radius: 9999px;     /* Fully rounded edges (pill shape) */
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background-color: #4e4bc5; /* Slightly darker on hover */
+}
+
+
 
 
 /* Form elements */
