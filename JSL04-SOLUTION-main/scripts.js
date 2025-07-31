@@ -131,7 +131,6 @@ addTaskBtn.addEventListener("click", () => {
   document.getElementById("task-modal").showModal();
 });
 
-
 /**
  * Sets up modal close behavior.
  */
@@ -157,7 +156,7 @@ function initTaskBoard() {
 // Wait until DOM is fully loaded
 document.addEventListener("DOMContentLoaded", initTaskBoard);
 
-const addTaskBtn = document.getElementById("add-task-btn");
+addTaskBtn = document.getElementById("add-task-btn");
 const taskForm = document.getElementById("task-form");
 
 addTaskBtn.addEventListener("click", () => {
