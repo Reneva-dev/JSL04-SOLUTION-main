@@ -467,3 +467,7 @@ form select {
     display: none;
   }
 }
+
+button:hover {
+  cursor: pointer;
+}
