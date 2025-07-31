@@ -1,5 +1,7 @@
 import { initialTasks } from "./initialData.js";
 
+let currentTaskId = null; // Global variable to track currently edited task
+
 const STORAGE_KEY = "kanbanTasks";
 
 /**
@@ -95,6 +97,8 @@ function openTaskModal(task) {
   titleInput.value = task.title;
   descInput.value = task.description;
   statusSelect.value = task.status;
+
+  currentTaskId = task.id;
 
   modal.showModal();
 }
