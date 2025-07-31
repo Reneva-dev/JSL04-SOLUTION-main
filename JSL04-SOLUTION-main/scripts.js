@@ -103,6 +103,21 @@ function openTaskModal(task) {
   modal.showModal();
 }
 
+const deleteTaskBtn = document.getElementById("delete-task-btn");
+
+deleteTaskBtn.addEventListener("click", () => {
+  if (currentTaskId === null) return; // Nothing to delete
+
+  let tasks = loadTasks();
+  tasks = tasks.filter((task) => task.id !== currentTaskId);
+
+  saveTasks(tasks);
+  document.getElementById("task-modal").close();
+  refreshBoard();
+  currentTaskId = null;
+});
+
+
 /**
  * Sets up modal close behavior.
  */
@@ -166,6 +181,7 @@ if (currentTaskId !== null) {
   };
   tasks.push(newTask);
 }
+
 
 saveTasks(tasks);
 document.getElementById("task-modal").close();
