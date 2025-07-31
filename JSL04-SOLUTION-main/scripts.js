@@ -107,7 +107,8 @@ function setupModalCloseHandler() {
  */
 function initTaskBoard() {
   clearExistingTasks();
-  renderTasks(initialTasks);
+  const tasks = loadTasks();
+  renderTasks(tasks);
   setupModalCloseHandler();
 }
 
