@@ -419,3 +419,51 @@ form select {
     padding: 24px;
   }
 }
+
+/* Style the Add Task button */
+.add-task-btn {
+  background-color: #635FC7;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px; /* very rounded edges */
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background-color: #4e4bc5;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 576px) {
+  .add-task-btn {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%; /* make circular */
+    font-size: 2rem; /* bigger plus */
+    justify-content: center;
+  }
+
+  .add-task-btn::after {
+    content: "+";
+    display: block;
+  }
+
+  /* Hide the full text on mobile */
+  .add-task-btn > span {
+    display: none;
+  }
+
+  /* Hide the launch career text */
+  .launch-career {
+    display: none;
+  }
+}
