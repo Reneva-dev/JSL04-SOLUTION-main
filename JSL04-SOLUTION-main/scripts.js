@@ -117,6 +117,20 @@ deleteTaskBtn.addEventListener("click", () => {
   currentTaskId = null;
 });
 
+const addTaskBtn = document.getElementById("add-task-btn");
+
+addTaskBtn.addEventListener("click", () => {
+  currentTaskId = null; // Indicate this is a new task
+
+  // Clear form fields for new input
+  document.getElementById("task-title").value = "";
+  document.getElementById("task-desc").value = "";
+  document.getElementById("task-status").value = "todo"; // Default to To Do
+
+  // Open the modal
+  document.getElementById("task-modal").showModal();
+});
+
 
 /**
  * Sets up modal close behavior.
