@@ -1,5 +1,23 @@
 import { initialTasks } from "./initialData.js";
 
+const STORAGE_KEY = "kanbanTasks";
+
+/**
+ * Load tasks from localStorage or fall back to initialTasks.
+ * Also ensures localStorage has data on first run.
+ * @returns {Array<Object>} Array of tasks
+ */
+function loadTasks() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    return JSON.parse(saved);
+  } else {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(initialTasks));
+    return initialTasks;
+  }
+}
+
+
 /**
  * Creates a single task DOM element.
  * @param {Object} task - Task data object.
