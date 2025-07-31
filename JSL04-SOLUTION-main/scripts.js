@@ -146,15 +146,32 @@ taskForm.addEventListener("submit", (e) => {
   const status = document.getElementById("task-status").value;
 
   if (!title || !status) return; // Basic validation
+const tasks = loadTasks();
 
-  const tasks = loadTasks();
-
+if (currentTaskId !== null) {
+  // Editing an existing task
+  const taskIndex = tasks.findIndex((t) => t.id === currentTaskId);
+  if (taskIndex !== -1) {
+    tasks[taskIndex].title = title;
+    tasks[taskIndex].description = description;
+    tasks[taskIndex].status = status;
+  }
+} else {
+  // Creating a new task
   const newTask = {
-    id: Date.now(), // Unique ID based on timestamp
+    id: Date.now(),
     title,
     description,
     status,
   };
+  tasks.push(newTask);
+}
+
+saveTasks(tasks);
+document.getElementById("task-modal").close();
+refreshBoard();
+currentTaskId = null; // Reset after submit
+
 
   tasks.push(newTask);
   saveTasks(tasks);
