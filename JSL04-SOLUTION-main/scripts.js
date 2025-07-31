@@ -123,3 +123,42 @@ function initTaskBoard() {
 
 // Wait until DOM is fully loaded
 document.addEventListener("DOMContentLoaded", initTaskBoard);
+
+const addTaskBtn = document.getElementById("add-task-btn");
+const taskForm = document.getElementById("task-form");
+
+addTaskBtn.addEventListener("click", () => {
+  // Reset form for new task
+  taskForm.reset();
+  document.getElementById("task-modal").showModal();
+});
+
+// Handle form submission
+taskForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const title = document.getElementById("task-title").value.trim();
+  const description = document.getElementById("task-desc").value.trim();
+  const status = document.getElementById("task-status").value;
+
+  if (!title || !status) return; // Basic validation
+
+  const tasks = loadTasks();
+
+  const newTask = {
+    id: Date.now(), // Unique ID based on timestamp
+    title,
+    description,
+    status,
+  };
+
+  tasks.push(newTask);
+  saveTasks(tasks);
+  document.getElementById("task-modal").close();
+  refreshBoard(); // Rerender UI
+});
+
+function refreshBoard() {
+  clearExistingTasks();
+  renderTasks(loadTasks());
+}
