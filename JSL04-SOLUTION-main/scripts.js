@@ -17,6 +17,15 @@ function loadTasks() {
   }
 }
 
+/**
+ * Save tasks array to localStorage.
+ * @param {Array<Object>} tasks - The array of task objects to store.
+ */
+function saveTasks(tasks) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+}
+
+
 
 /**
  * Creates a single task DOM element.
