@@ -104,4 +104,43 @@ addTaskBtn.addEventListener("click", () => {
   document.getElementById("task-desc").value = "";
   document.getElementById("task-status").value = "todo";
 
-  const submitBtn = document.getElementById("submit-task-btn"
+  const submitBtn = document.getElementById("submit-task-btn");
+  if (submitBtn) submitBtn.textContent = "Create Task";
+
+  document.getElementById("task-modal").showModal();
+});
+
+taskForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const title = document.getElementById("task-title").value.trim();
+  const description = document.getElementById("task-desc").value.trim();
+  const status = document.getElementById("task-status").value;
+
+  if (!title || !status) return;
+
+  const tasks = loadTasks();
+
+  if (currentTaskId !== null) {
+    const taskIndex = tasks.findIndex((t) => t.id === currentTaskId);
+    if (taskIndex !== -1) {
+      tasks[taskIndex].title = title;
+      tasks[taskIndex].description = description;
+      tasks[taskIndex].status = status;
+    }
+  } else {
+    const newTask = {
+      id: Date.now(),
+      title,
+      description,
+      status,
+    };
+    tasks.push(newTask);
+  }
+
+  saveTasks(tasks);
+  document.getElementById("task-modal").close();
+  refreshBoard();
+  currentTaskId = null;
+});
+
