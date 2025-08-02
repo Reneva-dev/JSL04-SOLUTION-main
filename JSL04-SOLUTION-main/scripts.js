@@ -171,10 +171,7 @@ document.getElementById("task-status").value = "todo";
 
 document.getElementById("task-modal").showModal();
 
-// Hide delete button and update submit button text
-const deleteBtn = document.getElementById("delete-task-btn");
-if (deleteBtn) deleteBtn.style.display = "none";
-
+// Submit button text
 const submitBtn = document.getElementById("submit-task-btn");
 if (submitBtn) submitBtn.textContent = "Create Task";
 
