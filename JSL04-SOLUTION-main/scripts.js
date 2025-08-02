@@ -163,6 +163,21 @@ addTaskBtn.addEventListener("click", () => {
   // Reset form for new task
   taskForm.reset();
   document.getElementById("task-modal").showModal();
+  currentTaskId = null;
+
+document.getElementById("task-title").value = "";
+document.getElementById("task-desc").value = "";
+document.getElementById("task-status").value = "todo";
+
+document.getElementById("task-modal").showModal();
+
+// Hide delete button and update submit button text
+const deleteBtn = document.getElementById("delete-task-btn");
+if (deleteBtn) deleteBtn.style.display = "none";
+
+const submitBtn = document.getElementById("submit-task-btn");
+if (submitBtn) submitBtn.textContent = "Create Task";
+
 });
 
 // Handle form submission
