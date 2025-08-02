@@ -471,3 +471,18 @@ form select {
 button:hover {
   cursor: pointer;
 }
+
+.submit-task-btn {
+  margin-top: 16px;
+  background-color: #635fc7;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.submit-task-btn:hover {
+  background-color: #4e4ab8;
+}
