@@ -1,8 +1,8 @@
 // main.js
 
-import { loadTasks, saveTasks } from './Kanban Productivity Main.js/js/storage.js';
-import { openTaskModal, setupModalCloseHandler } from './Kanban Productivity Main.js/js/modal.js';
-import { renderTasks, clearExistingTasks } from './Kanban Productivity Main.js/js/render.js';
+import { loadTasks, saveTasks } from './js/storage.js';
+import { openTaskModal, setupModalCloseHandler } from './js/modal.js';
+import { renderTasks, clearExistingTasks } from './js/render.js';
 
 
 
@@ -19,7 +19,7 @@ function init() {
 
 document.addEventListener("DOMContentLoaded", init);
 
-import { setupModalCloseHandler, setupAddTaskModal } from './Kanban Productivity Main.js/js/modal.js';
+import { setupModalCloseHandler, setupAddTaskModal } from './js/modal.js';
 //...
 function init() {
   clearExistingTasks();
