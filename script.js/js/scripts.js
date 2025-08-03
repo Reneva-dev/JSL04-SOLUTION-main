@@ -1,4 +1,4 @@
-import { initialTasks } from "./js/initialData.js";
+import { initialTasks } from "./initialData.js";
 
 let currentTaskId = null;
 
