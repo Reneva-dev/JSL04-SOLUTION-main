@@ -1,8 +1,10 @@
 // main.js
 
-import { loadTasks } from "./storage.js";
-import { clearExistingTasks, renderTasks } from "./render.js";
-import { setupModalCloseHandler, setupAddTaskModal } from "./modal.js";
+import { loadTasks, saveTasks } from './storage.js';
+import { openTaskModal, setupModalCloseHandler } from './modal.js';
+import { renderTasks, clearExistingTasks } from './render.js';
+import { initialTasks } from './initialData.js';
+
 
 /**
  * Initialize the Kanban board.
