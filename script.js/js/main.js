@@ -3,7 +3,6 @@
 import { loadTasks, saveTasks } from './storage.js';
 import { openTaskModal, setupModalCloseHandler } from './modal.js';
 import { renderTasks, clearExistingTasks } from './render.js';
-import { initialTasks } from './initialData.js';
 
 
 /**
